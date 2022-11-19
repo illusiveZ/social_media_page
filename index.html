@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>DunderChat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An example social media page to be used for communication between colleagues at work"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container" x-data="{ rightSide: false, leftSide: false }">
+      <div class="left-side" :class="{'active' : leftSide}">
+        <div class="left-side-button" @click="leftSide = !leftSide"></div>
+        <div class="logo">DunderChat</div>
+        <div class="side-wrapper">
+          <div class="side-title">Main Menu</div>
+          <div class="side-menu">
+            <a href="#"><i class="fas fa-home"></i>Home </a>
+            <a href="#"><i class="fas fa-newspaper"></i>News Feed </a>
+            <a href="#"><i class="fas fa-inbox"></i>Messages</a>
+            <a href="#"><i class="fas fa-comments"></i>Chat App</a>
+            <a href="#"><i class="fas fa-photo-video"></i>Photos</a>
+            <a href="#"><i class="fas fa-user-friends"></i>Find Friends</a>
+            <a href="#"><i class="fas fa-user-cog"></i>Settings</a>
+            <a href="#"><i class="fas fa-sign-out-alt fa-lg"></i>Sign Out</a>
+          </div>
+        </div>
+        <div class="side-wrapper">
+          <div class="side-title">Shortcuts</div>
+          <div class="side-menu">
+            <a href="#"><i class="fas fa-store"></i> Marketplace</a>
+            <a href="#"><i class="fas fa-luggage-cart"></i>Travel</a>
+            <a href="#"><i class="fas fa-briefcase fa-lg"></i>Jobs</a>
+            <a href="#"><i class="fas fa-flag fa-lg"></i>Pages</a>
+            <a href="#"> <i class="fas fa-gamepad"></i>Games </a>
+            <a href="#"><i class="fas fa-futbol fa-lg"></i>Sports </a>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+          <button
+            class="right-side-button"
+            @click="rightSide = !rightSide"
+          ></button>
+        </div>
+        <div class="main-container">
+          <div class="profile">
+            <div class="avatar">
+              <img
+                src="./assets/images/profile-pictures/profile-pic-01.jpeg"
+                alt=""
+                class="profile-img"
+              />
+              <div class="profile-name">Dwight Schrute</div>
+            </div>
+            <img
+              src="./assets/images/profile-cover/profile-cover-image1.jpeg"
+              alt=""
+              class="profile-cover"
+            />
+            <div class="profile-menu">
+              <a class="profile-menu-link active">Timeline</a>
+              <a class="profile-menu-link">About</a>
+              <a class="profile-menu-link">Friends</a>
+              <a class="profile-menu-link">Photos</a>
+              <a class="profile-menu-link">More</a>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-left">
+              <div class="intro box">
+                <div class="intro-title">
+                  About Dwight
+                  <button class="intro-menu"></button>
+                </div>
+                <div class="info">
+                  <div class="info-item">
+                    <i class="fas fa-briefcase"></i>Salesperson at
+                    <a href="#">Munder Difflin</a>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-map-marker-alt fa-lg"></i>From
+                    <a href="#">Scranton, PA</a>
+                  </div>
+                  <div class="info-item">
+                    <i class="fas fa-id-badge fa-lg"></i>Full Name
+                    <a href="#">Dwight Schrute</a>
+                  </div>
+                </div>
+              </div>
+              <div class="event box">
+                <div class="event-wrapper">
+                  <img
+                    src="./assets/images/event/event-image1.jpeg"
+                    class="event-img"
+                  />
+                  <div class="event-date">
+                    <div class="event-month">Apr</div>
+                    <div class="event-day">27</div>
+                  </div>
+                  <div class="event-title">Football in the park</div>
+                  <div class="event-subtitle">27 Apr 2021 @ 16:00</div>
+                </div>
+              </div>
+              <div class="pages box">
+                <div class="intro-title">
+                  Your pages
+                  <button class="intro-menu"></button>
+                </div>
+                <div class="user">
+                  <img
+                    src="./assets/images/profile-pictures/profile-pic-16.jpeg"
+                    alt=""
+                    class="user-img"
+                  />
+                  <div class="username">Pam Halpert</div>
+                </div>
+                <div class="user">
+                  <img
+                    src="./assets/images/profile-pictures/profile-pic-17.jpeg"
+                    alt=""
+                    class="user-img"
+                  />
+                  <div class="username">Uhtred Ragnarson</div>
+                </div>
+                <div class="user">
+                  <img
+                    src="./assets/images/profile-pictures/profile-pic-18.jpeg"
+                    alt=""
+                    class="user-img"
+                  />
+                  <div class="username">Arya Stark</div>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-right">
+              <div class="status box">
+                <div class="status-menu">
+                  <a class="status-menu-item active" href="#">Status</a>
+                  <a class="status-menu-item" href="#">Photos</a>
+                  <a class="status-menu-item" href="#">Videos</a>
+                </div>
+                <div class="status-main">
+                  <img
+                    src="./assets/images/profile-pictures/profile-pic-01.jpeg"
+                    class="status-img"
+                  />
+                  <textarea
+                    class="status-textarea"
+                    placeholder="Write something to Dwight Schrute.."
+                  ></textarea>
+                </div>
+                <div class="status-actions">
+                  <a href="#" class="status-action"
+                    ><i class="fas fa-video"></i>Live
+                  </a>
+                  <a href="#" class="status-action"
+                    ><i class="fas fa-images"></i> Photo
+                  </a>
+                  <a href="#" class="status-action">
+                    <i class="fas fa-flag"></i>Life Event
+                  </a>
+                  <button class="status-share">Share</button>
+                </div>
+              </div>
+              <div class="album box">
+                <div class="status-main">
+                  <img
+                    src="./assets/images/profile-pictures/profile-pic-01.jpeg"
+                    class="status-img"
+                  />
+                  <div class="album-detail">
+                    <div class="album-title">
+                      <strong>Dwight Schrute</strong> has created a new
+                      <span>photo album</span>
+                    </div>
+                    <div class="album-date">6 hours ago</div>
+                  </div>
+                  <button class="intro-menu"></button>
+                </div>
+                <div class="album-content">
+                  A few pictures from my travels
+                  <div class="album-photos">
+                    <img
+                      src="./assets/images/album/album-image1.jpeg"
+                      alt=""
+                      class="album-photo"
+                    />
+                    <div class="album-right">
+                      <img
+                        src="./assets/images/album/album-image2.jpeg"
+                        alt=""
+                        class="album-photo"
+                      />
+                      <img
+                        src="./assets/images/album/album-image3.jpeg"
+                        alt=""
+                        class="album-photo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="album-actions">
+                  <a href="#" class="album-action">
+                    <i class="far fa-heart"></i>87
+                  </a>
+                  <a href="#" class="album-action">
+                    <i class="fas fa-comment"></i>20
+                  </a>
+                  <a href="#" class="album-action">
+                    <i class="fas fa-share"></i>13
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-side" :class="{ 'active': rightSide }">
+        <div class="account">
+          <button class="account-button">
+            <i class="fas fa-envelope"></i>
+          </button>
+          <button class="account-button"><i class="fas fa-bell"></i></button>
+          <span class="account-user" href="sign-in.html"
+            >Dwight Schrute
+            <img
+              src="./assets/images/profile-pictures/profile-pic-01.jpeg"
+              alt=""
+              class="account-profile"
+              alt=""
+            />
+            <span>▼</span>
+          </span>
+        </div>
+        <div class="side-wrapper stories">
+          <div class="side-title">Story</div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-02.jpeg"
+              alt=""
+              class="user-img"
+            />
+            <div class="username">
+              Gabriella Ramos
+              <div class="album-date">&#60; 1 minute ago</div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-03.jpeg"
+              alt=""
+              class="user-img"
+            />
+            <div class="username">
+              Tony O'Neill
+              <div class="album-date">1 hour ago</div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-04.jpeg"
+              alt=""
+              class="user-img"
+            />
+            <div class="username">
+              Katy West
+              <div class="album-date">47 minutes ago</div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-05.jpeg"
+              alt=""
+              class="user-img"
+            />
+            <div class="username">
+              Victor Ramirez
+              <div class="album-date">2 days ago</div>
+            </div>
+          </div>
+        </div>
+        <div class="side-wrapper contacts">
+          <div class="side-title">Contacts</div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-06.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Adil Kennedy
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-07.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Erik Henry
+              <div class="user-status offline"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-08.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Syeda Robertson
+              <div class="user-status offline"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-09.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Chloe Parker
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-10.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Rhonda Clark
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-11.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Kara Ruiz
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-12.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Bethany Lynch
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-13.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Dale Armstrong
+              <div class="user-status idle"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-14.jpeg"
+              class="user-img"
+            />
+            <div class="username">
+              Elmer Fox
+              <div class="user-status"></div>
+            </div>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/images/profile-pictures/profile-pic-15.jpeg"
+              alt=""
+              class="user-img"
+            />
+            <div class="username">
+              Ally Morgan
+              <div class="user-status idle"></div>
+            </div>
+          </div>
+        </div>
+        <div class="search-bar right-search">
+          <input type="text" placeholder="Search" />
+          <div class="search-bar-svgs"></div>
+        </div>
+      </div>
+      <div
+        class="overlay"
+        @click="rightSide = false; leftSide = false"
+        :class="{ 'active': rightSide || leftSide }"
+      ></div>
+    </div>
+  </body>
+</html>
